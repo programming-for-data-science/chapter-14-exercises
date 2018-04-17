@@ -2,19 +2,24 @@
 
 # Load the httr and jsonlite libraries for accessing data
 # You can also load `dplyr` if you wish to use it
-
+library(httr)
+library(jsonlite)
+library(dplyr)
 
 # Create a variable for the API's base URI (https://api.github.com)
 
 
-# Under the "Repositories" category, find the endpoint that will list repos in 
-# an organization
-# Create a variable `resource` that represents the endpoint for the book
-# organization (you can use `paste0()` to construct this, or enter it manually)
+# Under the "Repositories" category of the API, 
+# find the endpoint that will list repos in an organization. Then, 
+# Create a variable `resource` that stores the endpoint for the "info201"
+# organization repos (this is the PATH to the resource of interest).
+# (FYI: this is where we keep the book code and master exercise sets!)
 
 
-# Send a GET request to this endpoint (the base.uri followed by the resource)
-# and extract the response body
+# Send a GET request to this endpoint (the `base_uri`` followed by `resource`)
+
+
+# Extract the "text" of the response usin the `content` function
 
 
 # Convert the body from JSON into a data frame
@@ -23,9 +28,11 @@
 # How many (public) repositories does the organization have?
 
 
+##### New query ######
 
-# Use a "Search" endpoint to search for repositories about "visualization" whose
-# language includes "R"
+# Use a "Search" endpoint to search for repositories about "graphics"
+# (bonus: limit language to only "R" -- which requires a different syntax)
+# (hint: https://developer.github.com/v3/search/#search-repositories)
 # Reassign the `resource` variable to refer to the appropriate resource.
 
 
@@ -34,7 +41,9 @@
 # the language
 
 
-# Send a GET request to this endpoint--including your params list as the `query`.
+# Send a GET request to this endpoint--including your params list as the `query`
+
+
 # Extract the response body and convert it from JSON.
 
 
@@ -42,14 +51,4 @@
 
 
 # What are the full names of the top 5 results?
-
-
-
-# Use the API to determine the number of people following Hadly Wickham 
-# (`hadley`, the author of dplyr, ggplot2, and other libraries we'll be using). 
-
-# Find an appropriate endpoint to query for statistics about a particular repo, 
-# and use it to get a list of contributors to the `tidyverse/dplyr` repository.
-# Who were the top 10 contributor in terms of number of total commits?
-# NOTE: This will be a really big response with lots of data!
 
