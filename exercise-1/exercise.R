@@ -10,8 +10,8 @@
 
 # Under the "Repositories" category of the API documentation, find the endpoint 
 # that will list _repos in an organization_. Then create a variable named
-# `org_resource` that stores the endpoint for the `info201` organization repos 
-# (this is the _path_ to the resource of interest).
+# `org_resource` that stores the endpoint for the `programming-for-data-science`
+# organization repos (this is the _path_ to the resource of interest).
 
 
 # Send a GET request to this endpoint (the `base_uri` followed by the 
@@ -36,7 +36,7 @@
 
 # Search queries require a query parameter (for what to search for). Create a 
 # `query_params` list variable that specifies an appropriate key and value for 
-# the search term
+# the search term (you can search for anything you want!)
 
 
 # Send a GET request to the `search_endpoint`--including your params list as the
